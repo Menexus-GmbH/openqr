@@ -9,7 +9,7 @@ The code and documentation are licensed under [MIT](LICENSE), copyright Menexus 
 
 ## Current status
 
-This repository is local-only and contains the initial contract and documentation.
+This repository is local-only and contains the initial contract, documentation and shared [conformance corpus](fixtures/README.md).
 No packages are implemented or published yet, and no remote repository has been created.
 Registry installation instructions will be added when working packages exist; package names and publication eligibility still require release checks.
 Link-spec v1 is independent of the planned initial package version `0.1.0`.
@@ -21,9 +21,10 @@ Link-spec v1 is independent of the planned initial package version `0.1.0`.
 | `dart/openqr` | `openqr` | Pure Dart encoder, decoder/classifier, guarded handler contract and public signed-record verifier. |
 | `flutter/openqr_flutter` | `openqr_flutter` | QR rendering and scanner widgets using existing `pretty_qr_code` and `mobile_scanner` capabilities. |
 | `ts/` | `@menexus-gmbh/openqr` | Typed ESM codec, classifier, handler contract and verifier, with declaration exports. |
-| `fixtures/*.json` | Shared corpus | Identical wire examples and verification cases consumed by Dart and TypeScript tests. |
+| `fixtures/*.json` | Shared corpus | Identical wire examples and verification cases ready for Dart and TypeScript tests. |
 
 The implementation order is the shared corpus, Dart core, Flutter widgets, TypeScript parity, then the Skyzai migration guide and `0.1.0-draft` changelog.
+The corpus integrity check is `node --test fixtures/integrity.test.mjs`; package conformance will be checked as each implementation is added.
 Core and widget packages are separate so a Dart or Flutter-web consumer can use the codec without camera APIs.
 TypeScript imports must work without React, Firebase, DOM or network initialization.
 

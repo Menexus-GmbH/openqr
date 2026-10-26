@@ -1,0 +1,1301 @@
+{
+  "schemaVersion": 1,
+  "policies": {
+    "skyzai": {
+      "canonicalOrigin": "https://skyzai.com",
+      "acceptedOrigins": [
+        "https://skyzai.com"
+      ],
+      "enabledKinds": [
+        "identity",
+        "payment",
+        "bookingSession",
+        "booking",
+        "ticket",
+        "walletAddress"
+      ],
+      "analyticsQueryKeys": [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign"
+      ],
+      "wallets": {
+        "hedera": {
+          "networks": [
+            "mainnet",
+            "testnet"
+          ],
+          "walletTypes": [
+            "wallet",
+            "trading"
+          ],
+          "assets": [
+            "0.0.456"
+          ]
+        },
+        "ethereum": {
+          "networks": [
+            "1"
+          ],
+          "walletTypes": [
+            "trading"
+          ],
+          "assets": []
+        }
+      },
+      "legacyProtocols": []
+    },
+    "reservedEnabled": {
+      "canonicalOrigin": "https://skyzai.com",
+      "acceptedOrigins": [
+        "https://skyzai.com"
+      ],
+      "enabledKinds": [
+        "identity",
+        "payment",
+        "bookingSession",
+        "booking",
+        "ticket",
+        "walletAddress",
+        "walletRequest",
+        "pairing"
+      ],
+      "analyticsQueryKeys": [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign"
+      ],
+      "wallets": {
+        "hedera": {
+          "networks": [
+            "mainnet",
+            "testnet"
+          ],
+          "walletTypes": [
+            "wallet",
+            "trading"
+          ],
+          "assets": [
+            "0.0.456"
+          ]
+        },
+        "ethereum": {
+          "networks": [
+            "1"
+          ],
+          "walletTypes": [
+            "trading"
+          ],
+          "assets": []
+        }
+      },
+      "legacyProtocols": []
+    },
+    "legacyHost": {
+      "canonicalOrigin": "https://skyzai.com",
+      "acceptedOrigins": [
+        "https://skyzai.com"
+      ],
+      "enabledKinds": [
+        "identity",
+        "payment",
+        "bookingSession",
+        "booking",
+        "ticket",
+        "walletAddress"
+      ],
+      "analyticsQueryKeys": [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign"
+      ],
+      "wallets": {
+        "hedera": {
+          "networks": [
+            "mainnet",
+            "testnet"
+          ],
+          "walletTypes": [
+            "wallet",
+            "trading"
+          ],
+          "assets": [
+            "0.0.456"
+          ]
+        },
+        "ethereum": {
+          "networks": [
+            "1"
+          ],
+          "walletTypes": [
+            "trading"
+          ],
+          "assets": []
+        }
+      },
+      "legacyProtocols": [
+        "paymentScheme",
+        "walletUrl",
+        "walletJson",
+        "bookingJson",
+        "ticketLegacy"
+      ]
+    },
+    "otherHost": {
+      "canonicalOrigin": "https://qr.example",
+      "acceptedOrigins": [
+        "https://qr.example",
+        "https://old-qr.example"
+      ],
+      "enabledKinds": [
+        "identity",
+        "payment",
+        "bookingSession",
+        "booking",
+        "ticket",
+        "walletAddress"
+      ],
+      "analyticsQueryKeys": [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign"
+      ],
+      "wallets": {
+        "hedera": {
+          "networks": [
+            "mainnet",
+            "testnet"
+          ],
+          "walletTypes": [
+            "wallet",
+            "trading"
+          ],
+          "assets": [
+            "0.0.456"
+          ]
+        },
+        "ethereum": {
+          "networks": [
+            "1"
+          ],
+          "walletTypes": [
+            "trading"
+          ],
+          "assets": []
+        }
+      },
+      "legacyProtocols": []
+    }
+  },
+  "decodeCases": [
+    {
+      "id": "personal",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "profile"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d"
+    },
+    {
+      "id": "explicit-pay",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d/payment",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "pay"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d/payment"
+    },
+    {
+      "id": "profile-terminal-slash",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d/",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "profile"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d"
+    },
+    {
+      "id": "profile-pay-terminal-slash",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d/payment/",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "pay"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d/payment"
+    },
+    {
+      "id": "profile-analytics",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d?utm_source=poster&utm_medium=qr&utm_campaign=launch",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "profile"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d"
+    },
+    {
+      "id": "outer-whitespace",
+      "policy": "skyzai",
+      "raw": " \thttps://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d\r\n",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "profile"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d"
+    },
+    {
+      "id": "purpose-payment",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice_01?v=1",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "payment",
+          "paymentId": "invoice_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/pay/invoice_01?v=1"
+    },
+    {
+      "id": "purpose-walletRequest",
+      "policy": "reservedEnabled",
+      "raw": "https://skyzai.com/request/request_01?v=1",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "walletRequest",
+          "requestId": "request_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/request/request_01?v=1"
+    },
+    {
+      "id": "purpose-bookingSession",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/booking/session_01?v=1",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "bookingSession",
+          "sessionId": "session_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/booking/session_01?v=1"
+    },
+    {
+      "id": "purpose-booking",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/bookings/booking_01?v=1",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "booking",
+          "bookingId": "booking_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/bookings/booking_01?v=1"
+    },
+    {
+      "id": "purpose-ticket",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/verify/ticket_01?v=1",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "ticket",
+          "ticketRef": "ticket_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/verify/ticket_01?v=1"
+    },
+    {
+      "id": "purpose-pairing",
+      "policy": "reservedEnabled",
+      "raw": "https://skyzai.com/connect/pairing_01?v=1",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "pairing",
+          "pairingId": "pairing_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/connect/pairing_01?v=1"
+    },
+    {
+      "id": "unversioned-payment",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice_01",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "payment",
+          "paymentId": "invoice_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/pay/invoice_01?v=1"
+    },
+    {
+      "id": "unversioned-bookingSession",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/booking/session_01",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "bookingSession",
+          "sessionId": "session_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/booking/session_01?v=1"
+    },
+    {
+      "id": "unversioned-booking",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/bookings/booking_01",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "booking",
+          "bookingId": "booking_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/bookings/booking_01?v=1"
+    },
+    {
+      "id": "unversioned-ticket",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/verify/ticket_01",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "ticket",
+          "ticketRef": "ticket_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/verify/ticket_01?v=1"
+    },
+    {
+      "id": "hedera-address",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=mainnet&type=wallet",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "walletAddress",
+          "address": "0.0.1234",
+          "chain": "hedera",
+          "network": "mainnet",
+          "walletType": "wallet"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=mainnet&type=wallet"
+    },
+    {
+      "id": "hedera-asset",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=mainnet&type=wallet&asset=0.0.456",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "walletAddress",
+          "address": "0.0.1234",
+          "chain": "hedera",
+          "network": "mainnet",
+          "walletType": "wallet",
+          "asset": "0.0.456"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=mainnet&type=wallet&asset=0.0.456"
+    },
+    {
+      "id": "evm-address",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0x1111111111111111111111111111111111111111?v=1&chain=ethereum&network=1&type=trading",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "walletAddress",
+          "address": "0x1111111111111111111111111111111111111111",
+          "chain": "ethereum",
+          "network": "1",
+          "walletType": "trading"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/wallet/0x1111111111111111111111111111111111111111?v=1&chain=ethereum&network=1&type=trading"
+    },
+    {
+      "id": "query-order",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?type=wallet&network=mainnet&chain=hedera&v=1",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "walletAddress",
+          "address": "0.0.1234",
+          "chain": "hedera",
+          "network": "mainnet",
+          "walletType": "wallet"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=mainnet&type=wallet"
+    },
+    {
+      "id": "percent-encoded-reference",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice%2D01?v=1",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "payment",
+          "paymentId": "invoice-01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/pay/invoice-01?v=1"
+    },
+    {
+      "id": "maximum-reference",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?v=1",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "payment",
+          "paymentId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/pay/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?v=1"
+    },
+    {
+      "id": "configured-origin",
+      "policy": "otherHost",
+      "raw": "https://qr.example/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+      "expected": {
+        "status": "recognized",
+        "source": "canonical",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "profile"
+        }
+      },
+      "canonicalUrl": "https://qr.example/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d"
+    },
+    {
+      "id": "configured-alias",
+      "policy": "otherHost",
+      "raw": "https://old-qr.example/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "profile"
+        }
+      },
+      "canonicalUrl": "https://qr.example/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d"
+    },
+    {
+      "id": "custom-profile",
+      "policy": "skyzai",
+      "raw": "skyzai://profile/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "profile"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d"
+    },
+    {
+      "id": "custom-profile-pay",
+      "policy": "skyzai",
+      "raw": "skyzai://profile/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d/payment",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "pay"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d/payment"
+    },
+    {
+      "id": "custom-payment-adapter",
+      "policy": "legacyHost",
+      "raw": "skyzai://pay?id=invoice_01",
+      "expected": {
+        "status": "recognized",
+        "source": "compatible",
+        "link": {
+          "kind": "payment",
+          "paymentId": "invoice_01"
+        }
+      },
+      "canonicalUrl": "https://skyzai.com/pay/invoice_01?v=1"
+    },
+    {
+      "id": "foreign-npub",
+      "policy": "skyzai",
+      "raw": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+      "expected": {
+        "status": "recognized",
+        "source": "foreign",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "profile"
+        }
+      }
+    },
+    {
+      "id": "foreign-nostr-npub",
+      "policy": "skyzai",
+      "raw": "nostr:npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+      "expected": {
+        "status": "recognized",
+        "source": "foreign",
+        "link": {
+          "kind": "identity",
+          "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+          "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+          "intent": "profile"
+        }
+      }
+    },
+    {
+      "id": "foreign-hedera",
+      "policy": "skyzai",
+      "raw": "0.0.1234",
+      "expected": {
+        "status": "recognized",
+        "source": "foreign",
+        "link": {
+          "kind": "walletAddress",
+          "address": "0.0.1234",
+          "chain": "hedera",
+          "network": null,
+          "walletType": null
+        }
+      }
+    },
+    {
+      "id": "foreign-hedera-scheme",
+      "policy": "skyzai",
+      "raw": "hedera:0.0.1234",
+      "expected": {
+        "status": "recognized",
+        "source": "foreign",
+        "link": {
+          "kind": "walletAddress",
+          "address": "0.0.1234",
+          "chain": "hedera",
+          "network": null,
+          "walletType": null
+        }
+      }
+    },
+    {
+      "id": "foreign-hedera-checksum-candidate",
+      "policy": "skyzai",
+      "raw": "0.0.1234-abcde",
+      "expected": {
+        "status": "recognized",
+        "source": "foreign",
+        "link": {
+          "kind": "walletAddress",
+          "address": "0.0.1234-abcde",
+          "chain": "hedera",
+          "network": null,
+          "walletType": null
+        }
+      }
+    },
+    {
+      "id": "foreign-hedera-query",
+      "policy": "skyzai",
+      "raw": "hedera:0.0.1234?amount=5",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unknownKind"
+      }
+    },
+    {
+      "id": "foreign-nostr-note",
+      "policy": "skyzai",
+      "raw": "nostr:note1zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygsglnzgl",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unknownKind"
+      }
+    },
+    {
+      "id": "private-nsec",
+      "policy": "skyzai",
+      "raw": "nsec1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqsmhltgl",
+      "expected": {
+        "status": "invalid",
+        "reason": "secretMaterial"
+      }
+    },
+    {
+      "id": "private-nostr-nsec",
+      "policy": "skyzai",
+      "raw": "nostr:nsec1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqsmhltgl",
+      "expected": {
+        "status": "invalid",
+        "reason": "secretMaterial"
+      }
+    },
+    {
+      "id": "bad-checksum",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6q",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "uppercase-npub",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/NPUB10XLXVLHEMJA6C4DQV22UAPCTQUPFHLXM9H8Z3K2E72Q4K9HCZ7VQPKGE6D",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "empty-input",
+      "policy": "skyzai",
+      "raw": "",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "missing-reference",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "overlong-reference",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "unknown-kind",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/unknown/id?v=1",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unknownKind"
+      }
+    },
+    {
+      "id": "plain-booking-id",
+      "policy": "skyzai",
+      "raw": "booking_01",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unknownKind"
+      }
+    },
+    {
+      "id": "foreign-origin",
+      "policy": "skyzai",
+      "raw": "https://evil.example/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+      "expected": {
+        "status": "invalid",
+        "reason": "untrustedOrigin"
+      }
+    },
+    {
+      "id": "suffix-domain",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com.evil.example/pay/invoice_01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "untrustedOrigin"
+      }
+    },
+    {
+      "id": "userinfo-on-trusted-host",
+      "policy": "skyzai",
+      "raw": "https://evil.example@skyzai.com/pay/invoice_01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "untrustedOrigin"
+      }
+    },
+    {
+      "id": "userinfo-trusted-lookalike",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com@evil.example/pay/invoice_01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "untrustedOrigin"
+      }
+    },
+    {
+      "id": "nondefault-port",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com:444/pay/invoice_01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "untrustedOrigin"
+      }
+    },
+    {
+      "id": "http-origin",
+      "policy": "skyzai",
+      "raw": "http://skyzai.com/pay/invoice_01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "untrustedOrigin"
+      }
+    },
+    {
+      "id": "foreign-host-no-legacy-fallback",
+      "policy": "legacyHost",
+      "raw": "https://evil.example/wallet/0.0.1234?chain=hedera&type=wallet",
+      "expected": {
+        "status": "invalid",
+        "reason": "untrustedOrigin"
+      }
+    },
+    {
+      "id": "unknown-version",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice_01?v=2",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unsupportedVersion"
+      }
+    },
+    {
+      "id": "duplicate-version",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice_01?v=1&v=1",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unsupportedVersion"
+      }
+    },
+    {
+      "id": "encoded-duplicate-version",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice_01?v=1&%76=1",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unsupportedVersion"
+      }
+    },
+    {
+      "id": "duplicate-query",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=mainnet&type=wallet&chain=ethereum",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "duplicate-profile-analytics",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d?utm_source=a&utm_source=b",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "action-override",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice_01?v=1&action=send",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "profile-redirect",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d?redirect=https%3A%2F%2Fevil.example",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "purpose-analytics-not-allowed",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice_01?v=1&utm_source=poster",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "purpose-fragment",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/verify/ticket_01?v=1#consume",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "extra-segment",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice_01/extra?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "encoded-slash",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice%2F01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "double-encoded-slash",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice%252F01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "backslash",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay\\invoice_01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "encoded-backslash",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice%5C01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "dot-segment-before-normalization",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/ignored/../pay/invoice_01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "encoded-dot-segment",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/ignored/%2e%2e/pay/invoice_01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "embedded-control",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice\n_01?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "malformed-escape",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice%ZZ?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "malformed-utf8-escape",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/pay/invoice%C0%AF?v=1",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "exact-byte-limit",
+      "policy": "skyzai",
+      "raw": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unknownKind"
+      }
+    },
+    {
+      "id": "over-byte-limit",
+      "policy": "skyzai",
+      "raw": "ééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé",
+      "expected": {
+        "status": "invalid",
+        "reason": "inputTooLong"
+      }
+    },
+    {
+      "id": "raw-limit-before-trimming",
+      "policy": "skyzai",
+      "raw": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                https://skyzai.com/npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+      "expected": {
+        "status": "invalid",
+        "reason": "inputTooLong"
+      }
+    },
+    {
+      "id": "disabled-request",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/request/request_01?v=1",
+      "expected": {
+        "status": "unsupported",
+        "reason": "disabledKind"
+      }
+    },
+    {
+      "id": "disabled-pairing",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/connect/pairing_01?v=1",
+      "expected": {
+        "status": "unsupported",
+        "reason": "disabledKind"
+      }
+    },
+    {
+      "id": "unknown-wallet-chain",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=1&chain=unknown&network=mainnet&type=wallet",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unsupportedWallet"
+      }
+    },
+    {
+      "id": "unknown-wallet-network",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=unknown&type=wallet",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unsupportedWallet"
+      }
+    },
+    {
+      "id": "unknown-wallet-type",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=mainnet&type=checking",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unsupportedWallet"
+      }
+    },
+    {
+      "id": "unknown-wallet-asset",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=mainnet&type=wallet&asset=HBAR",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unsupportedWallet"
+      }
+    },
+    {
+      "id": "missing-wallet-network",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&type=wallet",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "wallet-v1-amount",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=1&chain=hedera&network=mainnet&type=wallet&amt=1.5",
+      "expected": {
+        "status": "invalid",
+        "reason": "malformed"
+      }
+    },
+    {
+      "id": "legacy-wallet-url",
+      "policy": "legacyHost",
+      "raw": "https://skyzai.com/wallet/0.0.1234?chain=hedera&type=wallet&amt=0.100000000000000001",
+      "expected": {
+        "status": "legacy",
+        "protocol": "walletUrl"
+      }
+    },
+    {
+      "id": "legacy-wallet-json",
+      "policy": "legacyHost",
+      "raw": "{\"walletAddress\":\"0.0.1234\",\"chainKey\":\"hedera\",\"walletType\":\"wallet\",\"value\":\"0.100000000000000001\"}",
+      "expected": {
+        "status": "legacy",
+        "protocol": "walletJson"
+      }
+    },
+    {
+      "id": "legacy-booking-json",
+      "policy": "legacyHost",
+      "raw": "{\"bookingId\":\"booking_01\",\"userId\":\"synthetic_user\"}",
+      "expected": {
+        "status": "legacy",
+        "protocol": "bookingJson"
+      }
+    },
+    {
+      "id": "legacy-event-path",
+      "policy": "legacyHost",
+      "raw": "https://skyzai.com/events/event_01/user_01",
+      "expected": {
+        "status": "legacy",
+        "protocol": "ticketLegacy"
+      }
+    },
+    {
+      "id": "opaque-walletconnect",
+      "policy": "skyzai",
+      "raw": "wc:synthetic-topic@2",
+      "expected": {
+        "status": "legacy",
+        "protocol": "walletConnect"
+      }
+    },
+    {
+      "id": "opaque-connect",
+      "policy": "skyzai",
+      "raw": "skyzai-connect:synthetic-topic@1",
+      "expected": {
+        "status": "legacy",
+        "protocol": "connect"
+      }
+    },
+    {
+      "id": "no-implicit-wallet-adapter",
+      "policy": "skyzai",
+      "raw": "https://skyzai.com/wallet/0.0.1234?chain=hedera&type=wallet&amt=1",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unknownKind"
+      }
+    },
+    {
+      "id": "legacy-version-refusal",
+      "policy": "legacyHost",
+      "raw": "https://skyzai.com/wallet/0.0.1234?v=2&chain=hedera&type=wallet&amt=1",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unsupportedVersion"
+      }
+    },
+    {
+      "id": "retired-debug-json",
+      "policy": "legacyHost",
+      "raw": "{\"publicKey\":\"79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798\",\"relays\":[\"wss://relay.example\"],\"preference\":\"crypto\"}",
+      "expected": {
+        "status": "unsupported",
+        "reason": "unknownKind"
+      }
+    }
+  ],
+  "encodeRejectCases": [
+    {
+      "id": "disabled-request",
+      "policy": "skyzai",
+      "link": {
+        "kind": "walletRequest",
+        "requestId": "request_01"
+      }
+    },
+    {
+      "id": "disabled-pairing",
+      "policy": "skyzai",
+      "link": {
+        "kind": "pairing",
+        "pairingId": "pairing_01"
+      }
+    },
+    {
+      "id": "invalid-identity-checksum",
+      "policy": "skyzai",
+      "link": {
+        "kind": "identity",
+        "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6q",
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "intent": "profile"
+      }
+    },
+    {
+      "id": "identity-key-mismatch",
+      "policy": "skyzai",
+      "link": {
+        "kind": "identity",
+        "npub": "npub10xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqpkge6d",
+        "publicKeyHex": "c6047f9441ed7d6d3045406e95c07cd85c778e4b8cef3ca7abac09b95c709ee5",
+        "intent": "profile"
+      }
+    },
+    {
+      "id": "empty-reference",
+      "policy": "skyzai",
+      "link": {
+        "kind": "payment",
+        "paymentId": ""
+      }
+    },
+    {
+      "id": "reference-path-injection",
+      "policy": "skyzai",
+      "link": {
+        "kind": "payment",
+        "paymentId": "invoice/other"
+      }
+    },
+    {
+      "id": "reference-over-limit",
+      "policy": "skyzai",
+      "link": {
+        "kind": "ticket",
+        "ticketRef": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    {
+      "id": "foreign-missing-network",
+      "policy": "skyzai",
+      "link": {
+        "kind": "walletAddress",
+        "address": "0.0.1234",
+        "chain": "hedera",
+        "network": null,
+        "walletType": null
+      }
+    },
+    {
+      "id": "unknown-wallet-type",
+      "policy": "skyzai",
+      "link": {
+        "kind": "walletAddress",
+        "address": "0.0.1234",
+        "chain": "hedera",
+        "network": "mainnet",
+        "walletType": "checking"
+      }
+    },
+    {
+      "id": "invalid-wallet-address",
+      "policy": "skyzai",
+      "link": {
+        "kind": "walletAddress",
+        "address": "not-an-account",
+        "chain": "hedera",
+        "network": "mainnet",
+        "walletType": "wallet"
+      }
+    },
+    {
+      "id": "unknown-wallet-asset",
+      "policy": "skyzai",
+      "link": {
+        "kind": "walletAddress",
+        "address": "0.0.1234",
+        "chain": "hedera",
+        "network": "mainnet",
+        "walletType": "wallet",
+        "asset": "HBAR"
+      }
+    }
+  ]
+}

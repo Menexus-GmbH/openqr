@@ -1,0 +1,758 @@
+{
+  "schemaVersion": 1,
+  "records": {
+    "older": {
+      "kind": 30302,
+      "created_at": 1700000000,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"cryptoPayments\":[{\"scheme\":\"hedera\",\"network\":\"mainnet\",\"asset\":\"HBAR\",\"address\":\"0.0.1234\"}]}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "5c43514f398c86144e30322310fee4184e3b000659af251ba56243f817c89669",
+      "sig": "af5ea2785337251d215ebe3cf618eea9911223d41858726770f263da56ab758c65c6f1390fbba9ebb206df3258277d99f21d381f7b5bec983ce9486b892b1c57"
+    },
+    "newer": {
+      "kind": 30302,
+      "created_at": 1700000001,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"cryptoPayments\":[{\"scheme\":\"hedera\",\"network\":\"mainnet\",\"asset\":\"HBAR\",\"address\":\"0.0.5678\"}]}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "4c6b5d0f9bcfe008bb1aad3ff00dfd4cd1bec35eaf67582206525fafe62650e0",
+      "sig": "f6e0657d2022ff7c79c7717f3427e2beacefd9fe9b58cb189f26a0533354954e26122a6caaa6be00b76d260906e7cd72a6902728cfa2f3b97cd436fd9924b715"
+    },
+    "tieA": {
+      "kind": 30302,
+      "created_at": 1700000002,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"label\":\"tie A\"}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "e6e659ed06aaf142202f1c63e5f372d9d89e134b9385d098349325114ff7d85b",
+      "sig": "7edef73a69c5c5719abe903779cc4cda9a3909698ab49e7fb9d676067678151c38fe0bb1b8dd528a105fe82d3f06aa015e82897c0022e127c7d72dcb6f7e4ffe"
+    },
+    "tieB": {
+      "kind": 30302,
+      "created_at": 1700000002,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"label\":\"tie B\"}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "69f499384312578971bbf47fb3f27d854ed519faa42b9b65c8cd7efeb6172d45",
+      "sig": "d476e670eeb5be13800154bbfec72fca1cd70f76e938e90722b7f3aa1b2820897ecf28d1e18d7d8081b452f6f1956019ac1fa37ec5ea3afc31c988fa7b55a6ba"
+    },
+    "emptyNewest": {
+      "kind": 30302,
+      "created_at": 1700000003,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "e5306823833810a1a8fb806feda008a7934087c14c1f600556b9cc7198b28126",
+      "sig": "ee654f9288177d5d7b4aaed9f5ed09d4d614de953e03212ce6a8c3dd4648c4d1ef47eef5194d34fa2aff7c70d18abd04aec4add4e141e95ecc99d6fe5821afe8"
+    },
+    "malformedNewest": {
+      "kind": 30302,
+      "created_at": 1700000004,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{not valid content JSON",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "ef1dcc9a3cf6582769a4e0cf5f9449bce7dbe6523230128355276237f597af56",
+      "sig": "0d8cb11e167cbf07985687077e6c8c6a9f0298dd3f55f9461759d3c4768dc86ed0472aa55ac57f1341c2f7a48ae142c55a6e0f6b099c9ab63b9af18965e44abf"
+    },
+    "profile": {
+      "kind": 30301,
+      "created_at": 1700000001,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"name\":\"Synthetic fixture\"}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "3bffe01ecba93b39734e3a5066e0d062394af0c14102dd1385332e3923d4950c",
+      "sig": "d4c58c91f284e1ef4e49601da0a86167f70f888d48cd406c86fb18bcf54fc1d331df66fe32fe0b3a59cdd8ba99e115db8812d5f9490816a7f701a7da8add73be"
+    },
+    "otherAuthor": {
+      "kind": 30302,
+      "created_at": 1700000005,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{}",
+      "pubkey": "c6047f9441ed7d6d3045406e95c07cd85c778e4b8cef3ca7abac09b95c709ee5",
+      "id": "f28907376bce64d6d0ac9d8f00ac2fc82a64ce8aaf4341bbcce3c85e8a1dccda",
+      "sig": "9e96ff7ad631a1c8896076339d62ed716b7dfec8a1e65aae79fb69e6fbf03f224e2e400b4aa749821287ad1b740cdd3e709051921a77e0feb20dfc589c47ab1a"
+    },
+    "wrongD": {
+      "kind": 30302,
+      "created_at": 1700000005,
+      "tags": [
+        [
+          "d",
+          "other-coordinate"
+        ]
+      ],
+      "content": "{}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "66cdfd1778c8ed142d2235742ceff2d86e2475bdd4b80f89e915f4565b3c196e",
+      "sig": "81ac242d5af512dcd6bc0b3a839b701f901b14255119e2eb9bb0a3d670a0ad150d822139f63f2fc40bbcb6046f862d57d679fbf6fcf3f219b408b2f4d6a35cf1"
+    },
+    "missingD": {
+      "kind": 30302,
+      "created_at": 1700000005,
+      "tags": [],
+      "content": "{}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "25cb79b1631fd835746a6600c90e2c82cd8ba82639ebc7e39c31b0ee544cd421",
+      "sig": "5bdd882e6051f252b31657dd2a9f1b55eea8c1e0d4a3cf5058b7a42c14018ffe7de5edc8bfa764e22f8bbc401b5c61088421b4ba26e178b9ec5ee234aa6b82f6"
+    },
+    "dPrefixOnly": {
+      "kind": 30302,
+      "created_at": 1700000005,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture-extra"
+        ]
+      ],
+      "content": "{}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "f5e8c5265cd03972ff5f650b651f95fd2e5fdc035e2693148b52e5ec1b3ed90e",
+      "sig": "d0f2d3f159c76593adf23f1a5062d20846ac8ef554de279cd72743fb7b230cf7467e3e2c2919875e60dab9f0ff06217c839d43c93b8d147d570f268a039e8c7f"
+    },
+    "shortD": {
+      "kind": 30302,
+      "created_at": 1700000005,
+      "tags": [
+        [
+          "d"
+        ]
+      ],
+      "content": "{}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "25ed5918da46521f740741621bc438b082acf482f4562396a61c2742f58f7949",
+      "sig": "983cd441b6415ed4dbafe9604a901a4a2bce8f41156d5c232709eff0e27513f786a7a05c4999cde319342f26cc0fb79c25b1945b1c8361236028d16ba497241e"
+    },
+    "matchingDWithExtraField": {
+      "kind": 30302,
+      "created_at": 1700000001,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture",
+          "extra"
+        ]
+      ],
+      "content": "{}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "7d571a461365b126badf3b8f491a5c49c1ffd6306c383c2fbf4f41e20e03a3ed",
+      "sig": "e271c29b25eac18c7589b0c2cf1cd0cbe45c4ea3779bbb0279e5329188bc8c0f575eed768552ea3eb5cf5e89d42936a102671db493fdfe3f106299fc8fdc53d6"
+    },
+    "matchingDNotFirst": {
+      "kind": 30302,
+      "created_at": 1700000001,
+      "tags": [
+        [
+          "d",
+          "other-coordinate"
+        ],
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "2ca39f7148e7c21b5f5e20c841226e589629cc481f828d2da88364e93c9c73d7",
+      "sig": "e63d103122b7789a3beb4f8b1e008bd2bbf6be7d88457cfee1a47a82788efb35b7b7324dcd37971eb16237c80520fea33690702ab3205a41751c39ac610f1cc1"
+    },
+    "unicode": {
+      "kind": 30302,
+      "created_at": 1700000001,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"label\":\"café 世界\",\"line\":\"one\\ntwo\"}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "2d804e44c8c5008d156037742f55c756dd90767e79a1466ed854ef85007ab9ae",
+      "sig": "a7a5c949d975f9e3f4a267fd6a2af0211e83eb789a1bc3a0e54de4cad5a7abfcd7d1b25f1c1c2992d17f7a37350ef2e07175af2006a43742b0b4e2a0870e9814"
+    },
+    "fractionalTimestamp": {
+      "kind": 30302,
+      "created_at": 1700000000.5,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "4d9ed17886eaafbc6ff67cba77a14d21c605b2534dd67a2a9f829eb3d3594c9c",
+      "sig": "e6a59097505f9a7a79fb68409a98b5e8ab29d1976427bcdd62d7a25beb7df204d37a7b7f0fef6c927313e718521416d5e9e8cfd91e570fed3906956c138d6222"
+    },
+    "tamperedContent": {
+      "kind": 30302,
+      "created_at": 1700000000,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"forged\":true}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "5c43514f398c86144e30322310fee4184e3b000659af251ba56243f817c89669",
+      "sig": "af5ea2785337251d215ebe3cf618eea9911223d41858726770f263da56ab758c65c6f1390fbba9ebb206df3258277d99f21d381f7b5bec983ce9486b892b1c57"
+    },
+    "tamperedId": {
+      "kind": 30302,
+      "created_at": 1700000000,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"cryptoPayments\":[{\"scheme\":\"hedera\",\"network\":\"mainnet\",\"asset\":\"HBAR\",\"address\":\"0.0.1234\"}]}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sig": "af5ea2785337251d215ebe3cf618eea9911223d41858726770f263da56ab758c65c6f1390fbba9ebb206df3258277d99f21d381f7b5bec983ce9486b892b1c57"
+    },
+    "tamperedSignature": {
+      "kind": 30302,
+      "created_at": 1700000000,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"cryptoPayments\":[{\"scheme\":\"hedera\",\"network\":\"mainnet\",\"asset\":\"HBAR\",\"address\":\"0.0.1234\"}]}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "5c43514f398c86144e30322310fee4184e3b000659af251ba56243f817c89669",
+      "sig": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "forgedRehashedContent": {
+      "kind": 30302,
+      "created_at": 1700000000,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"forged\":true}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "0a1b43bb2b220865898660ac839834a936cbacd2c32dc778d6b9883e73ed9f1b",
+      "sig": "af5ea2785337251d215ebe3cf618eea9911223d41858726770f263da56ab758c65c6f1390fbba9ebb206df3258277d99f21d381f7b5bec983ce9486b892b1c57"
+    },
+    "missingSignature": {
+      "kind": 30302,
+      "created_at": 1700000000,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"cryptoPayments\":[{\"scheme\":\"hedera\",\"network\":\"mainnet\",\"asset\":\"HBAR\",\"address\":\"0.0.1234\"}]}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "5c43514f398c86144e30322310fee4184e3b000659af251ba56243f817c89669"
+    },
+    "nullContent": {
+      "kind": 30302,
+      "created_at": 1700000000,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": null,
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "5c43514f398c86144e30322310fee4184e3b000659af251ba56243f817c89669",
+      "sig": "af5ea2785337251d215ebe3cf618eea9911223d41858726770f263da56ab758c65c6f1390fbba9ebb206df3258277d99f21d381f7b5bec983ce9486b892b1c57"
+    },
+    "stringTimestamp": {
+      "kind": 30302,
+      "created_at": "1700000000",
+      "tags": [
+        [
+          "d",
+          "openqr-fixture"
+        ]
+      ],
+      "content": "{\"cryptoPayments\":[{\"scheme\":\"hedera\",\"network\":\"mainnet\",\"asset\":\"HBAR\",\"address\":\"0.0.1234\"}]}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "5c43514f398c86144e30322310fee4184e3b000659af251ba56243f817c89669",
+      "sig": "af5ea2785337251d215ebe3cf618eea9911223d41858726770f263da56ab758c65c6f1390fbba9ebb206df3258277d99f21d381f7b5bec983ce9486b892b1c57"
+    },
+    "nonStringTag": {
+      "kind": 30302,
+      "created_at": 1700000000,
+      "tags": [
+        [
+          "d",
+          "openqr-fixture",
+          42
+        ]
+      ],
+      "content": "{\"cryptoPayments\":[{\"scheme\":\"hedera\",\"network\":\"mainnet\",\"asset\":\"HBAR\",\"address\":\"0.0.1234\"}]}",
+      "pubkey": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+      "id": "5c43514f398c86144e30322310fee4184e3b000659af251ba56243f817c89669",
+      "sig": "af5ea2785337251d215ebe3cf618eea9911223d41858726770f263da56ab758c65c6f1390fbba9ebb206df3258277d99f21d381f7b5bec983ce9486b892b1c57"
+    },
+    "nullEnvelope": null
+  },
+  "verifyCases": [
+    {
+      "id": "older",
+      "record": "older",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "newer",
+      "record": "newer",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "tieA",
+      "record": "tieA",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "tieB",
+      "record": "tieB",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "emptyNewest",
+      "record": "emptyNewest",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "malformedNewest",
+      "record": "malformedNewest",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "profile",
+      "record": "profile",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30301,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "otherAuthor",
+      "record": "otherAuthor",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "wrongD",
+      "record": "wrongD",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "missingD",
+      "record": "missingD",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "dPrefixOnly",
+      "record": "dPrefixOnly",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "shortD",
+      "record": "shortD",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "matchingDWithExtraField",
+      "record": "matchingDWithExtraField",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "matchingDNotFirst",
+      "record": "matchingDNotFirst",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "unicode",
+      "record": "unicode",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": true
+    },
+    {
+      "id": "fractionalTimestamp",
+      "record": "fractionalTimestamp",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "tamperedContent",
+      "record": "tamperedContent",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "tamperedId",
+      "record": "tamperedId",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "tamperedSignature",
+      "record": "tamperedSignature",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "forgedRehashedContent",
+      "record": "forgedRehashedContent",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "missingSignature",
+      "record": "missingSignature",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "nullContent",
+      "record": "nullContent",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "stringTimestamp",
+      "record": "stringTimestamp",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "nonStringTag",
+      "record": "nonStringTag",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "nullEnvelope",
+      "record": "nullEnvelope",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "wrong-requested-author",
+      "record": "older",
+      "expected": {
+        "publicKeyHex": "c6047f9441ed7d6d3045406e95c07cd85c778e4b8cef3ca7abac09b95c709ee5",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "wrong-requested-kind",
+      "record": "older",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30301,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    },
+    {
+      "id": "wrong-requested-d",
+      "record": "older",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "other-coordinate"
+      },
+      "verified": false
+    },
+    {
+      "id": "profile-not-payment",
+      "record": "profile",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      },
+      "verified": false
+    }
+  ],
+  "selectionCases": [
+    {
+      "id": "newest-shuffled",
+      "records": [
+        "newer",
+        "older"
+      ],
+      "selected": "newer",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      }
+    },
+    {
+      "id": "newest-reversed",
+      "records": [
+        "older",
+        "newer"
+      ],
+      "selected": "newer",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      }
+    },
+    {
+      "id": "ignore-forgeries-and-other-coordinates",
+      "records": [
+        "tamperedContent",
+        "otherAuthor",
+        "wrongD",
+        "profile",
+        "newer",
+        "older",
+        "forgedRehashedContent"
+      ],
+      "selected": "newer",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      }
+    },
+    {
+      "id": "equal-time-id-tie",
+      "records": [
+        "tieB",
+        "tieA"
+      ],
+      "selected": "tieB",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      }
+    },
+    {
+      "id": "equal-time-id-tie-reversed",
+      "records": [
+        "tieA",
+        "tieB"
+      ],
+      "selected": "tieB",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      }
+    },
+    {
+      "id": "empty-replacement-removes-old-content",
+      "records": [
+        "older",
+        "emptyNewest",
+        "newer"
+      ],
+      "selected": "emptyNewest",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      }
+    },
+    {
+      "id": "malformed-content-does-not-revive-old-content",
+      "records": [
+        "newer",
+        "malformedNewest",
+        "older"
+      ],
+      "selected": "malformedNewest",
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      }
+    },
+    {
+      "id": "none-verified",
+      "records": [
+        "tamperedSignature",
+        "tamperedId",
+        "wrongD",
+        "nullEnvelope"
+      ],
+      "selected": null,
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      }
+    },
+    {
+      "id": "no-records",
+      "records": [],
+      "selected": null,
+      "expected": {
+        "publicKeyHex": "79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
+        "kind": 30302,
+        "dTag": "openqr-fixture"
+      }
+    }
+  ]
+}
