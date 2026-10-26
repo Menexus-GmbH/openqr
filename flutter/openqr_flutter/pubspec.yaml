@@ -1,0 +1,24 @@
+name: openqr_flutter
+description: QR rendering and guarded capture widgets for the OpenQR public-link contract.
+version: 0.1.0-draft
+publish_to: none
+environment:
+  sdk: '>=3.8.0 <4.0.0'
+  flutter: '>=3.29.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  openqr:
+    path: ../../dart/openqr
+  mobile_scanner: ^7.0.1
+  pretty_qr_code:
+    git:
+      url: https://github.com/Menexus-GmbH/flutter_pretty_qr.git
+      ref: faa96f0af39b36172ac78aede096a1a54a712dc5
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+dependency_overrides:
+  # Skyzai's existing override reconciles its Nostr and Pretty QR Git forks.
+  web_socket_channel: ^3.0.1

@@ -9,9 +9,9 @@ The code and documentation are licensed under [MIT](LICENSE), copyright Menexus 
 
 ## Current status
 
-This repository is local-only and contains the contract, shared [conformance corpus](fixtures/README.md) and working [pure Dart package](dart/openqr/README.md).
+This repository is local-only and contains the contract, shared [conformance corpus](fixtures/README.md), working [pure Dart package](dart/openqr/README.md) and [Flutter widgets](flutter/openqr_flutter/README.md).
 The Dart package tests consume both shared JSON files directly, covering links, encoding refusals, signed envelopes and record selection.
-Flutter widgets and TypeScript remain to be implemented.
+Flutter widgets have offline widget tests; TypeScript remains to be implemented.
 No packages are published and no remote repository has been created; package names and publication eligibility still require release checks.
 Link-spec v1 is independent of the planned initial package version `0.1.0`.
 
@@ -27,6 +27,8 @@ Link-spec v1 is independent of the planned initial package version `0.1.0`.
 The implementation order is the shared corpus, Dart core, Flutter widgets, TypeScript parity, then the Skyzai migration guide and `0.1.0-draft` changelog.
 The corpus integrity check is `node --test fixtures/integrity.test.mjs`.
 Run `dart pub get`, `dart test` and `dart analyze` from `dart/openqr` to validate the Dart implementation.
+Run `flutter pub get`, `flutter test` and `flutter analyze` from `flutter/openqr_flutter` to validate the widgets.
+The Flutter README documents the existing Skyzai dependency override required by consuming hosts.
 TypeScript conformance remains pending.
 Core and widget packages are separate so a Dart or Flutter-web consumer can use the codec without camera APIs.
 TypeScript imports must work without React, Firebase, DOM or network initialization.
