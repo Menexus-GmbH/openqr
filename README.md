@@ -11,7 +11,8 @@ The code and documentation are licensed under [MIT](LICENSE), copyright Menexus 
 
 This repository is local-only and contains the contract, shared [conformance corpus](fixtures/README.md), working [pure Dart package](dart/openqr/README.md), [Flutter widgets](flutter/openqr_flutter/README.md) and [TypeScript package](ts/README.md).
 Dart and TypeScript tests consume both shared JSON files directly, covering links, encoding refusals, signed envelopes and record selection.
-Flutter widgets have offline widget tests; the Skyzai migration guide and final draft changelog remain pending.
+Flutter widgets have offline widget tests; the [Skyzai migration guide](MIGRATION.md) records the remaining host integration gates.
+The [0.1.0-draft changelog](CHANGELOG.md) records the local package scope and validation.
 No packages are published and no remote repository has been created; package names and publication eligibility still require release checks.
 Link-spec v1 is independent of the planned initial package version `0.1.0`.
 
@@ -24,7 +25,7 @@ Link-spec v1 is independent of the planned initial package version `0.1.0`.
 | `ts/` | `@menexus-gmbh/openqr` | Typed ESM codec, classifier, handler contract and verifier, with declaration exports. |
 | `fixtures/*.json` | Shared corpus | Identical wire examples and verification cases ready for Dart and TypeScript tests. |
 
-The implementation order is the shared corpus, Dart core, Flutter widgets, TypeScript parity, then the Skyzai migration guide and `0.1.0-draft` changelog.
+The local draft includes the shared corpus, Dart core, Flutter widgets, TypeScript parity and migration/release documentation.
 The corpus integrity check is `node --test fixtures/integrity.test.mjs`.
 Run `dart pub get`, `dart test` and `dart analyze` from `dart/openqr` to validate the Dart implementation.
 Run `flutter pub get`, `flutter test` and `flutter analyze` from `flutter/openqr_flutter` to validate the widgets.
