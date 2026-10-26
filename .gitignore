@@ -2,3 +2,5 @@
 build/
 coverage/
 .flutter-plugins-dependencies
+node_modules/
+dist/

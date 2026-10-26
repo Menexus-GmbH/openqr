@@ -1,0 +1,40 @@
+{
+  "name": "@menexus-gmbh/openqr",
+  "version": "0.1.0-draft",
+  "private": true,
+  "description": "Typed public-link codecs and supplied Nostr record verification without host I/O",
+  "type": "module",
+  "license": "MIT",
+  "author": "Menexus GmbH",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p test/tsconfig.json",
+    "test": "npm run build && npm run typecheck && node --test test/*.test.mjs",
+    "format": "prettier --write src test package.json tsconfig.json",
+    "format:check": "prettier --check src test package.json tsconfig.json"
+  },
+  "dependencies": {
+    "nostr-tools": "2.25.2"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2",
+    "typescript": "5.9.3"
+  }
+}
