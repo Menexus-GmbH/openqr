@@ -9,12 +9,13 @@ The code and documentation are licensed under [MIT](LICENSE), copyright Menexus 
 
 ## Current status
 
-This repository is local-only and contains the initial contract, documentation and shared [conformance corpus](fixtures/README.md).
-No packages are implemented or published yet, and no remote repository has been created.
-Registry installation instructions will be added when working packages exist; package names and publication eligibility still require release checks.
+This repository is local-only and contains the contract, shared [conformance corpus](fixtures/README.md) and working [pure Dart package](dart/openqr/README.md).
+The Dart package tests consume both shared JSON files directly, covering links, encoding refusals, signed envelopes and record selection.
+Flutter widgets and TypeScript remain to be implemented.
+No packages are published and no remote repository has been created; package names and publication eligibility still require release checks.
 Link-spec v1 is independent of the planned initial package version `0.1.0`.
 
-## Planned packages
+## Packages
 
 | Location | Package | Responsibility |
 |---|---|---|
@@ -24,7 +25,9 @@ Link-spec v1 is independent of the planned initial package version `0.1.0`.
 | `fixtures/*.json` | Shared corpus | Identical wire examples and verification cases ready for Dart and TypeScript tests. |
 
 The implementation order is the shared corpus, Dart core, Flutter widgets, TypeScript parity, then the Skyzai migration guide and `0.1.0-draft` changelog.
-The corpus integrity check is `node --test fixtures/integrity.test.mjs`; package conformance will be checked as each implementation is added.
+The corpus integrity check is `node --test fixtures/integrity.test.mjs`.
+Run `dart pub get`, `dart test` and `dart analyze` from `dart/openqr` to validate the Dart implementation.
+TypeScript conformance remains pending.
 Core and widget packages are separate so a Dart or Flutter-web consumer can use the codec without camera APIs.
 TypeScript imports must work without React, Firebase, DOM or network initialization.
 
@@ -52,7 +55,7 @@ Old printed profile/ticket links keep decoding, while amount-bearing wallet URLs
 
 ## Qualification and release boundary
 
-The shared fixture corpus will validate Dart/TypeScript parity, including hostile inputs and signed-record replacement rules.
+The shared fixture corpus checks hostile inputs and signed-record replacement rules; cross-language parity remains pending the TypeScript implementation.
 Flutter validation is initially widget-only; it does not claim device-camera or OS app-link qualification.
 The first real integration gate is Skyzai's native scan-to-profile review, followed by skyzai.com's public profile/Pay host using the same Dart boundary.
 Package tests and examples do not count as those host acceptance tests.
