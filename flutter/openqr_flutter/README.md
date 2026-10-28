@@ -75,6 +75,8 @@ The initial scanner integration is not a web-camera qualification; Flutter web h
 Camera, paste and image analysis share one decoder and callback, including invalid and unsupported results.
 Capture stops before the host callback, and a second input cannot overlap pending image analysis or review.
 After `handled`, `unsupported`, errors or obsolete work, capture stays stopped until explicit `retry()`.
+A detector error invalidates the current invocation, including input awaiting camera shutdown or image analysis.
+Queued captures and late callback results cannot replace that error or restart capture; recovery requires explicit `retry()`.
 A callback returning `cancelled` resumes capture if its invocation is still current and uncancelled; `cancel()` stops the scanner until retry or disposal.
 `handled` means accepted for review/navigation, never payment, admission or approval.
 
@@ -103,6 +105,7 @@ dart format --output=none --set-exit-if-changed lib test
 
 Widget tests use the real plugin controller with a fake platform and shared link fixtures through camera callback, image analysis and pasted input.
 They cover rendering/semantics at large text scale, safe errors, duplicate dispatch, account/caller guards, cancellation, lifecycle and disposal.
+Detector regressions cover both capture/error event orders, including capture before error through the real plugin stream, plus late image and callback results with explicit retry recovery.
 No camera, gallery picker, permission dialog or device is opened by these tests.
 Real Skyzai native and public web host qualification, camera hardware, platform permissions and OS link handling remain separate integration gates.
 

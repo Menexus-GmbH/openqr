@@ -1,4 +1,5 @@
 /// One guarded input path for camera, host-pasted text and chosen images.
+/// Detector errors invalidate pending work and hold capture until retry().
 /// No navigation, raw-payload logging or interpretation of opaque legacy keys.
 library;
 
@@ -192,15 +193,18 @@ class OpenQrScannerState extends State<OpenQrScanner>
     if (!mounted || !_foreground || _busy || _hold) return;
     _busy = true;
     _hold = true;
+    final generation = _generation;
     final invocation = _scope();
     _show(OpenQrScannerStatus.processing);
     try {
       await _syncCamera();
+      if (generation != _generation) return;
       if (invocation.interruption case final OpenQrHandling stopped) {
         _show(OpenQrScannerStatus.values.byName(stopped.name));
         return;
       }
       final raw = await read();
+      if (generation != _generation) return;
       if (invocation.interruption case final OpenQrHandling stopped) {
         _show(OpenQrScannerStatus.values.byName(stopped.name));
         return;
@@ -213,16 +217,17 @@ class OpenQrScannerState extends State<OpenQrScanner>
       final outcome = result is Legacy && widget.onLegacy != null
           ? await widget.onLegacy!(result.protocol, raw, invocation)
           : await widget.onDecoded(result, invocation);
+      if (generation != _generation) return;
       final finalOutcome = invocation.interruption ?? outcome;
       _show(OpenQrScannerStatus.values.byName(finalOutcome.name));
       if (finalOutcome == OpenQrHandling.cancelled && !_cancelled) {
         _hold = false;
       }
     } on UnsupportedError {
-      _show(OpenQrScannerStatus.unavailable);
+      if (generation == _generation) _show(OpenQrScannerStatus.unavailable);
     } catch (_) {
       // Host callback exceptions can contain secrets, so expose only safe state.
-      _show(OpenQrScannerStatus.error);
+      if (generation == _generation) _show(OpenQrScannerStatus.error);
     } finally {
       _busy = false;
       if (mounted) unawaited(_syncCamera());
@@ -271,7 +276,12 @@ class OpenQrScannerState extends State<OpenQrScanner>
       controller: _camera,
       useAppLifecycleState: false,
       onDetect: _capture,
-      onDetectError: (_, _) => _show(OpenQrScannerStatus.error),
+      onDetectError: (_, _) {
+        _generation++;
+        _hold = true;
+        unawaited(_syncCamera());
+        _show(OpenQrScannerStatus.error);
+      },
       errorBuilder: (_, _) => const SizedBox.shrink(),
     ),
     this,
